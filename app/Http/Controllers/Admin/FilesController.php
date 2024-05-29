@@ -117,7 +117,17 @@ class FilesController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-
+    public function edit($id)
+    {
+        if (! Gate::allows('file_edit')) {
+            return abort(401);
+        }
+        
+        $created_bies = \App\User::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
+        $file = File::findOrFail($id);
+        $folders = \App\File::get()->pluck('folder_id', 'id');
+        return view('admin.files.edit', compact('file', 'folders'));
+    }
     /**
      * Update File in storage.
      *
@@ -155,7 +165,25 @@ class FilesController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-
+    public function show($id)
+    {
+        if (!Gate::allows('file_view')) {
+            return abort(401);
+        }
+    
+        // Assuming you want to retrieve a single file by its ID
+        $file = File::findOrFail($id);
+    
+        // You can remove the following line since it's already fetched above
+        // $files = File::where('files_id', $id)->get();
+    
+        // Assuming you want to count files created by the currently authenticated user
+        $userFilesCount = File::where('created_by_id', Auth::user()->id)->count();
+    
+        // Assuming 'admin.files.show' is the correct view name
+        return view('admin.files.show', compact('file', 'userFilesCount'));
+    }
+    
 
     /**
      * Remove File from storage.

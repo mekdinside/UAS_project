@@ -278,5 +278,5 @@ return [
 	'qa_parse_csv' => 'Parse CSV',
 	'qa_import_data' => 'Import data',
 	'qa_imported_rows_to_table' => 'Imported :rows rows to :table table',
-	'quickadmin_title' => 'File Storage',
+	'quickadmin_title' => 'Sistem Manajemen Dokumen Kantor',
 ];
