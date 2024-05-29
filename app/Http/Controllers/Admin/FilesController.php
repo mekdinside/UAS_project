@@ -14,6 +14,7 @@ use App\Http\Controllers\Traits\FileUploadTrait;
 use Illuminate\Support\Facades\Session;
 use Faker\Provider\Uuid;
 
+
 class FilesController extends Controller
 {
     use FileUploadTrait;
@@ -153,7 +154,7 @@ class FilesController extends Controller
             $file->save();
             $media[] = $file->toArray();
         }
-        $file->updateMedia($media, 'filename');
+        $file->updated($media, 'filename');
 
         return redirect()->route('admin.files.index');
     }

@@ -71,7 +71,7 @@
                                         <a href="{{url('/admin/' . $file->uuid . '/download')}}" target="_blank">{{ $media->name }} ({{ $media->size }} KB)</a>
                                     </p>
                                 @endforeach</td>
-                            <td field-key='folder'>{{ $file->folder->name ?? '' }}</td>
+                            <td field-key='folder'>{{ $file->folder->name or '' }}</td>
                             @if( request('show_deleted') == 1 )
                                 <td>
                                     @if (Auth::getUser()->role_id == 2 && $userFilesCount >= 5)
@@ -109,7 +109,7 @@
                             @else
                                 <td>
                                     @can('file_edit')
-                                            <a href="{{ route('admin.files.edit',[$file->id])}}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                                            
                                     @endcan
                                     <a href="{{url('/admin/' . $file->uuid . '/download')}}" class="btn btn-xs btn-success">Download</a>
                                     @can('file_delete')
