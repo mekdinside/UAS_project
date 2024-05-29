@@ -1,11 +1,48 @@
 <?php
 
 return [
-		'user-management' => [		'title' => 'User management',		'fields' => [		],	],
-		'roles' => [		'title' => 'Roles',		'fields' => [			'title' => 'Title',		],	],
-		'users' => [		'title' => 'Users',		'fields' => [			'name' => 'Name',			'email' => 'Email',			'password' => 'Password',			'role' => 'Role',			'remember-token' => 'Remember token',		],	],
-		'folders' => [		'title' => 'Folders',		'fields' => [			'name' => 'Name',			'created-by' => 'Created by',		],	],
-		'files' => [		'title' => 'Files',		'fields' => [			'uuid' => 'Uuid',			'folder' => 'Folder id',			'created-by' => 'Created by',			'filename' => 'Filename',		],	],
+	
+	'user-management' => [
+		'title' => 'User management',
+		'fields' => [
+		],
+	],
+	
+	'roles' => [
+		'title' => 'Roles',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+	
+	'users' => [
+		'title' => 'Users',
+		'fields' => [
+			'name' => 'Name',
+			'email' => 'Email',
+			'password' => 'Password',
+			'role' => 'Role',
+			'remember-token' => 'Remember token',
+		],
+	],
+	
+	'folders' => [
+		'title' => 'Folders',
+		'fields' => [
+			'name' => 'Name',
+			'created-by' => 'Created by',
+		],
+	],
+	
+	'files' => [
+		'title' => 'Files',
+		'fields' => [
+			'uuid' => 'Uuid',
+			'folder' => 'Folder id',
+			'created-by' => 'Created by',
+			'filename' => 'Filename',
+		],
+	],
 	'qa_create' => 'Създай',
 	'qa_save' => 'Запази',
 	'qa_edit' => 'Промени',
@@ -20,5 +57,5 @@ return [
 	'qa_back_to_list' => 'Обратно към списъка',
 	'qa_dashboard' => 'Табло',
 	'qa_delete' => 'Изтрий',
-	'quickadmin_title' => 'File Storage',
+	'quickadmin_title' => 'Sistem Manajamen Dokumen Kantor',
 ];
